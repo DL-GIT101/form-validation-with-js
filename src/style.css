@@ -1,0 +1,12 @@
+:root {
+    --color-primary: #910A67;
+    --color-accent: #720455;
+    --color-secondary: #3C0753;
+    --color-background: #030637;
+    --color-invicible: rgb(0,0,0,0);
+    font-size: 20px;
+}
+
+body {
+    background-color: var(--color-background);
+}
