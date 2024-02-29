@@ -1,7 +1,7 @@
 {
-  "name": "repository-template",
+  "name": "form-validation-with-js",
   "version": "1.0.0",
-  "description": "Repository Template for my projects",
+  "description": "Top Activity Project where I practiced my form validation on javascript",
   "private": true,
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
@@ -17,8 +17,10 @@
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.8.1",
     "style-loader": "^3.3.4",
+    "webpack": "^5.90.3",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.2"
+    "webpack-dev-server": "^5.0.2",
+    "webpack-merge": "^5.10.0"
   },
   "dependencies": {
     "lodash": "^4.17.21",
