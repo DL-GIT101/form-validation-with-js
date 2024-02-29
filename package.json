@@ -6,8 +6,7 @@
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "update": "git subtree push --prefix dist origin gh-pages",
-    "prettier": "npx eslint-config-prettier src/index.js"
+    "update": "git subtree push --prefix dist origin gh-pages"
   },
   "keywords": [],
   "author": "",
