@@ -1,7 +1,8 @@
 const path = require('path');
- const HtmlWebpackPlugin = require('html-webpack-plugin');
- const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const ESLintPlugin = require('eslint-webpack-plugin');
 
  module.exports = {
    entry: {
@@ -17,6 +18,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
         filename: "[name].css",
         chunkFilename: "[id].css",
       }),
+      new ESLintPlugin(),
    ],
    module: {
     rules: [
