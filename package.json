@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "update": "git subtree push --prefix dist origin gh-pages"
+    "update": "git subtree push --prefix dist origin gh-pages",
+    "prettier": "npx eslint-config-prettier src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,8 @@
   "devDependencies": {
     "css-loader": "^6.10.0",
     "css-minimizer-webpack-plugin": "^6.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-webpack-plugin": "^4.0.1",
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.8.1",
     "style-loader": "^3.3.4",
