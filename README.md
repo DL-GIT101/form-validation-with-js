@@ -1,4 +1,3 @@
-# repository-template
-Repository Template for my projects 
+# Form Validation with JS
 
-This is mainly for webpack
+Top Activity Project where I practiced my form validation on javascript
