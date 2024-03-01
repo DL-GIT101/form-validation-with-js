@@ -41,7 +41,7 @@ const createSelect = (title, choices) => {
     });
 
     const div = document.createElement('div');
-    div.className = "select-container";
+    div.className = "input-container";
     div.append(label,select);
 
     return div;
