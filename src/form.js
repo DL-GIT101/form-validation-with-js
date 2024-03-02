@@ -106,4 +106,20 @@ const createConfirmPasswordInput = () => {
     return confirmPasswordInput;
 }
 
-export {createForm,createEmailInput,createSelect,createTextInput,createPasswordInput,createConfirmPasswordInput};
+const createSubmitButton = () => {
+
+    const button = document.createElement('buttton');
+    button.className = "submit";
+    button.id = "submit";
+    button.textContent = "Submit";
+
+    return button;
+}
+
+export {createForm,
+        createEmailInput,
+        createSelect,createTextInput,
+        createPasswordInput,
+        createConfirmPasswordInput,
+        createSubmitButton,
+        };
