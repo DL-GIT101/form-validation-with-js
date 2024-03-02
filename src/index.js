@@ -1,4 +1,4 @@
-import { createConfirmPasswordInput, createEmailInput, createForm, createPasswordInput, createSelect, createTextInput } from './form';
+import { createConfirmPasswordInput, createEmailInput, createForm, createPasswordInput, createSelect, createSubmitButton, createTextInput } from './form';
 import './style.css';
 
 const formValidation = () => {
@@ -17,8 +17,16 @@ const body = document.querySelector('body');
         const passwordInput = createPasswordInput();
 
         const confirmPasswordInput = createConfirmPasswordInput();
+
+        const submitButton = createSubmitButton();
     
-    form.append(emailInput,select,zipInput,passwordInput,confirmPasswordInput);
+    form.append(emailInput,
+                select,
+                zipInput,
+                passwordInput,
+                confirmPasswordInput,
+                submitButton,
+                );
     
 body.append(form);
 }
