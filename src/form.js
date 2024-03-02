@@ -14,6 +14,7 @@ const createEmailInput = () => {
     input.type = "email";
     input.name = "email";
     input.id = "email";
+    input.required = true;
 
     const div = document.createElement('div');
     div.className = "input-container";
@@ -56,6 +57,7 @@ const createTextInput = (title) => {
     input.type = "text";
     input.name = title.toLowerCase();
     input.id = title.toLowerCase();
+    input.required = true;
 
     const div = document.createElement('div');
     div.className = "input-container";
@@ -73,6 +75,7 @@ const createPasswordInput = () => {
     input.type = "password";
     input.name = "password";
     input.id = "password";
+    input.required = true;
 
     const div = document.createElement('div');
     div.className = "input-container";
@@ -87,6 +90,7 @@ const createConfirmPasswordInput = () => {
     confirmPasswordInput.querySelector('label').textContent = "Confirm Password";
     confirmPasswordInput.querySelector('input').name = "confirmPassword";
     confirmPasswordInput.querySelector('input').id = "confirmPassword";
+    confirmPasswordInput.querySelector('input').required = true;
 
     return confirmPasswordInput;
 }
