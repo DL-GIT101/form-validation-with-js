@@ -9,6 +9,7 @@ const createEmailInput = () => {
 
     const label = document.createElement('label');
     label.textContent = "Email";
+    label.htmlFor = "email";
 
     const input = document.createElement('input');
     input.type = "email";
@@ -27,6 +28,7 @@ const createSelect = (title, choices) => {
 
     const label = document.createElement('label');
     label.textContent = title;
+    label.htmlFor = title.toLowerCase();
 
     const select = document.createElement('select');
     select.name = title.toLowerCase();
@@ -52,6 +54,7 @@ const createTextInput = (title) => {
 
     const label = document.createElement('label');
     label.textContent = title;
+    label.htmlFor = title.toLowerCase();
 
     const input = document.createElement('input');
     input.type = "text";
@@ -70,6 +73,7 @@ const createPasswordInput = () => {
 
     const label = document.createElement('label');
     label.textContent = "Password";
+    label.htmlFor = "password";
 
     const input = document.createElement('input');
     input.type = "password";
@@ -87,10 +91,15 @@ const createPasswordInput = () => {
 const createConfirmPasswordInput = () => {
 
     const confirmPasswordInput = createPasswordInput();
-    confirmPasswordInput.querySelector('label').textContent = "Confirm Password";
-    confirmPasswordInput.querySelector('input').name = "confirmPassword";
-    confirmPasswordInput.querySelector('input').id = "confirmPassword";
-    confirmPasswordInput.querySelector('input').required = true;
+
+    const label = confirmPasswordInput.querySelector('label');
+    label.textContent = "Confirm Password";
+    label.htmlFor = "confirmPassword";
+
+    const input = confirmPasswordInput.querySelector('input');
+    input.name = "confirmPassword";
+    input.id = "confirmPassword";
+    input.required = true;
 
     return confirmPasswordInput;
 }
