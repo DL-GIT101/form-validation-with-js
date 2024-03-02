@@ -16,6 +16,7 @@ const createEmailInput = () => {
     input.name = "email";
     input.id = "email";
     input.required = true;
+    input.autocomplete = "on";
 
     const div = document.createElement('div');
     div.className = "input-container";
@@ -33,6 +34,7 @@ const createSelect = (title, choices) => {
     const select = document.createElement('select');
     select.name = title.toLowerCase();
     select.id = title.toLowerCase();
+    select.autocomplete = "on";
 
     choices.forEach(choice => {
         
