@@ -25,9 +25,12 @@ const createEmailInput = () => {
     const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     input.pattern = regex;
 
+    const message = document.createElement('p');
+    message.className = "message";
+
     const div = document.createElement('div');
     div.className = "input-container";
-    div.append(label,input);
+    div.append(label,input,message);
 
     return div;
 }
@@ -56,9 +59,12 @@ const createSelect = (title, choices) => {
         select.appendChild(option);
     });
 
+    const message = document.createElement('p');
+    message.className = "message";
+
     const div = document.createElement('div');
     div.className = "input-container";
-    div.append(label,select);
+    div.append(label,select,message);
 
     return div;
 }
@@ -79,10 +85,12 @@ const createTextInput = (title) => {
     input.id = title.toLowerCase();
     input.required = true;
 
+    const message = document.createElement('p');
+    message.className = "message";
+
     const div = document.createElement('div');
     div.className = "input-container";
-    div.append(label,input);
-
+    div.append(label,input,message);
     return div;
 }
 
@@ -102,9 +110,12 @@ const createPasswordInput = () => {
     input.id = "password";
     input.required = true;
 
+    const message = document.createElement('p');
+    message.className = "message";
+
     const div = document.createElement('div');
     div.className = "input-container";
-    div.append(label,input);
+    div.append(label,input,message);
 
     return div;
 }
