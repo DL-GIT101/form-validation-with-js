@@ -54,3 +54,20 @@ input#submit {
     background-color: var(--color-secondary);
     color: var(--color-primary);
 }
+
+.input-container > input:valid, .input-container > select:valid {
+    border: 2px solid green;
+    background-color: whitesmoke;
+}
+
+.input-container > input:invalid, .input-container > select:invalid {
+    border: 2px solid rgb(255, 50, 50);
+}
+
+.input-container > input:required, .input-container > select:required {
+    background-color: rgb(255, 192, 192);
+}
+
+.input-container > input:focus, .input-container > select:focus {
+    border: 2px solid blue;
+}
