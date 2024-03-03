@@ -36,8 +36,14 @@ form {
 }
 
 .input-container > label {
-    place-self: center right;
-    padding-right: 10px;
+    place-self: center left;
+    padding-left: 10px;
+}
+
+.input-container > label > span {
+    font-size: small;
+    font-style: italic;
+    padding-left: 5px;
 }
 
 .input-container > input, .input-container > select {
