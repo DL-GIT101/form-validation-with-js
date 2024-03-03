@@ -33,9 +33,13 @@ form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "label input"
+        "message message";
 }
 
 .input-container > label {
+    grid-area: label;
     place-self: center left;
     padding-left: 10px;
 }
@@ -47,6 +51,7 @@ form {
 }
 
 .input-container > input, .input-container > select {
+    grid-area: input;
     place-self: center stretch;
     margin-left: 10px;
     border-radius: 10px;
@@ -76,4 +81,10 @@ input#submit {
 
 .input-container > input:focus, .input-container > select:focus {
     border: 2px solid blue;
+}
+
+.input-container > .message{
+    grid-area: message;
+    margin: 0;
+    color: red;
 }
