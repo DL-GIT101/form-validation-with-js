@@ -47,3 +47,10 @@ form {
     border: 2px solid var(--color-secondary);
     background-color: whitesmoke;
 }
+
+input#submit {
+    border-radius: 10px;
+    border: none;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
