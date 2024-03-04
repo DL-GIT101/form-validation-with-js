@@ -138,11 +138,11 @@ const createConfirmPasswordInput = () => {
 
 const createSubmitButton = () => {
 
-    const button = document.createElement('input');
+    const button = document.createElement('button');
     button.className = "submit";
     button.id = "submit";
     button.textContent = "Submit";
-    button.setAttribute("type", "submit");
+    button.setAttribute("type", "button");
 
     return button;
 }
