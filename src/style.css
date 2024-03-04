@@ -59,11 +59,16 @@ form {
     background-color: whitesmoke;
 }
 
-input#submit {
+.submit {
     border-radius: 10px;
     border: none;
     background-color: var(--color-secondary);
     color: var(--color-primary);
+}
+
+.submit:hover {
+    background-color: var(--color-accent);
+    cursor: pointer;
 }
 
 .input-container > input:valid, .input-container > select:valid {
@@ -73,10 +78,6 @@ input#submit {
 
 .input-container > input:invalid, .input-container > select:invalid {
     border: 2px solid rgb(255, 50, 50);
-}
-
-.input-container > input:required, .input-container > select:required {
-    background-color: rgb(255, 192, 192);
 }
 
 .input-container > input:focus, .input-container > select:focus {
