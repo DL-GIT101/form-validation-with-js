@@ -1,4 +1,5 @@
 import { createConfirmPasswordInput, createEmailInput, createForm, createPasswordInput, createSelect, createSubmitButton, createTextInput } from './form';
+import { validateForm } from './formValidation';
 import './style.css';
 
 const formValidation = () => {
@@ -7,26 +8,29 @@ const body = document.querySelector('body');
 
     const form = createForm();
     
-        const emailInput = createEmailInput();
+        const email = createEmailInput();
 
-        const countries = ["Philippines","Japan","South Korea"];
-        const select = createSelect("Country",countries);
+        //const countries = ["Philippines","Japan","South Korea"];
+        //const selectCountry = createSelect("Country",countries);
 
-        const zipInput = createTextInput("Zip");
+        //const zip = createTextInput("Zip");
 
-        const passwordInput = createPasswordInput();
+        //const password = createPasswordInput();
 
-        const confirmPasswordInput = createConfirmPasswordInput();
+        //const confirmPassword = createConfirmPasswordInput();
 
         const submitButton = createSubmitButton();
-    
-    form.append(emailInput,
-                select,
-                zipInput,
-                passwordInput,
-                confirmPasswordInput,
+        submitButton.addEventListener("click", () => validateForm());
+
+    form.append(email,
+                //selectCountry,
+                //zip,
+                //password,
+                //confirmPassword,
                 submitButton,
                 );
+
+    form.addEventListener("change", () => validateForm());
     
 body.append(form);
 }
