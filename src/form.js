@@ -19,11 +19,7 @@ const createEmailInput = () => {
     input.type = "email";
     input.name = "email";
     input.id = "email";
-    input.required = true;
     input.autocomplete = "on";
-
-    const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-    input.pattern = regex;
 
     const message = document.createElement('p');
     message.className = "message";
