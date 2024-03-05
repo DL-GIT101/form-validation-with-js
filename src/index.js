@@ -2,7 +2,7 @@ import { createConfirmPasswordInput, createEmailInput, createForm, createPasswor
 import { validateForm } from './formValidation';
 import './style.css';
 
-const formValidation = () => {
+const SampleForm = () => {
     
 const body = document.querySelector('body');
 
@@ -20,19 +20,16 @@ const body = document.querySelector('body');
         //const confirmPassword = createConfirmPasswordInput();
 
         const submitButton = createSubmitButton();
-        submitButton.addEventListener("click", () => validateForm());
 
-    form.append(email,
+    form.append(email.label, email.input, email.message,
                 //selectCountry,
                 //zip,
                 //password,
                 //confirmPassword,
                 submitButton,
                 );
-
-    form.addEventListener("change", () => validateForm());
     
 body.append(form);
 }
 
-formValidation();
+SampleForm();
