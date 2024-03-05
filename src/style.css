@@ -26,32 +26,19 @@ form {
     padding: 10px;
     grid-area: form;
     display: grid;
-    grid-template-rows: repeat(auto-fill, 1fr);
+    grid-template-rows: repeat(auto-fill, minmax(30px, 1fr));
 }
 
-.input-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
-        "label input"
-        "message message";
-}
-
-.input-container > label {
-    grid-area: label;
+ label {
     place-self: center left;
     padding-left: 10px;
 }
-
-.input-container > label > span {
+ label > span {
     font-size: small;
     font-style: italic;
     padding-left: 5px;
 }
-
-.input-container > input, .input-container > select {
-    grid-area: input;
+ input, select {
     place-self: center stretch;
     margin-left: 10px;
     border-radius: 10px;
@@ -71,21 +58,16 @@ form {
     cursor: pointer;
 }
 
-.input-container > input:valid, .input-container > select:valid {
+input.validated:valid, select:valid {
     border: 2px solid green;
     background-color: whitesmoke;
 }
 
-.input-container > input:invalid, .input-container > select:invalid {
-    border: 2px solid rgb(255, 50, 50);
+input.validated:invalid, select:invalid {
+  border: 2px solid rgb(255, 50, 50);
 }
 
-.input-container > input:focus, .input-container > select:focus {
-    border: 2px solid blue;
-}
-
-.input-container > .message{
-    grid-area: message;
+.message{
     margin: 0;
     color: red;
 }
