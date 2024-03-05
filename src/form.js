@@ -1,6 +1,14 @@
+import { validateForm } from "./formValidation";
+
 const createForm = () => {
     
     const form = document.createElement('form');
+
+    form.addEventListener('change', () => validateForm());
+    form.addEventListener('submit', (event) => {
+        validateForm();
+        event.preventDefault();
+    });
 
     return form;
 }
@@ -20,15 +28,15 @@ const createEmailInput = () => {
     input.name = "email";
     input.id = "email";
     input.autocomplete = "on";
+    input.required = true;
+
+    const regex = /[A-Za-z0-9._+\-']+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}/;
+    input.pattern = regex.source;
 
     const message = document.createElement('p');
     message.className = "message";
 
-    const div = document.createElement('div');
-    div.className = "input-container";
-    div.append(label,input,message);
-
-    return div;
+    return {label,input,message};
 }
 
 const createSelect = (title, choices) => {
@@ -142,7 +150,7 @@ const createSubmitButton = () => {
     button.className = "submit";
     button.id = "submit";
     button.textContent = "Submit";
-    button.setAttribute("type", "button");
+    button.setAttribute("type", "submit");
 
     return button;
 }
