@@ -1,5 +1,4 @@
 import { createConfirmPasswordInput, createEmailInput, createForm, createPasswordInput, createSelect, createSubmitButton, createTextInput } from './form';
-import { validateForm } from './formValidation';
 import './style.css';
 
 const SampleForm = () => {
