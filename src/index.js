@@ -13,7 +13,7 @@ const body = document.querySelector('body');
 
         const zip = createTextInput("Zip");
 
-        //const password = createPasswordInput();
+        const password = createPasswordInput();
 
         //const confirmPassword = createConfirmPasswordInput();
 
@@ -22,7 +22,7 @@ const body = document.querySelector('body');
     form.append(email.label, email.input, email.message,
                 selectCountry.label,selectCountry.select,
                 zip.label,zip.input,zip.message,
-                //password,
+                password.label,password.input,password.message,
                 //confirmPassword,
                 submitButton,
                 );
