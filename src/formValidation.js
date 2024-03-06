@@ -122,6 +122,12 @@ const validateForm = () => {
     validateZip();
     validatePassword();
     valdiateCPassword();
+
+    const form = document.querySelector('form');
+
+    if(form.checkValidity()){
+        alert("High Five");
+    }
 }
 
 
