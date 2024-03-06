@@ -120,6 +120,8 @@ const createPasswordInput = () => {
     input.name = "password";
     input.id = "password";
     input.required = true;
+    input.minLength = 8;
+    input.maxLength = 16;
 
     const message = document.createElement('p');
     message.className = "message";
@@ -133,6 +135,9 @@ const createConfirmPasswordInput = () => {
 
     label.textContent = "Confirm Password";
     label.htmlFor = "confirmPassword";
+    const span = document.createElement('span');
+    span.textContent = "(required)";
+    label.append(span);
 
     input.name = "confirmPassword";
     input.id = "confirmPassword";
