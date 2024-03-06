@@ -129,23 +129,13 @@ const createPasswordInput = () => {
 
 const createConfirmPasswordInput = () => {
 
-    const confirmPasswordInput = createPasswordInput();
+    const {label,input,message} = createPasswordInput();
 
-    const label = confirmPasswordInput.querySelector('label');
     label.textContent = "Confirm Password";
     label.htmlFor = "confirmPassword";
 
-    const span = document.createElement('span');
-    span.textContent = "(required)";
-    label.append(span);
-
-    const input = confirmPasswordInput.querySelector('input');
     input.name = "confirmPassword";
     input.id = "confirmPassword";
-    input.required = true;
-
-    const message = document.createElement('p');
-    message.className = "message";
 
     return {label,input,message};
 }
