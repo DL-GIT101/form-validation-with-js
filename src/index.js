@@ -15,7 +15,7 @@ const body = document.querySelector('body');
 
         const password = createPasswordInput();
 
-        //const confirmPassword = createConfirmPasswordInput();
+        const confirmPassword = createConfirmPasswordInput();
 
         const submitButton = createSubmitButton();
 
@@ -23,7 +23,7 @@ const body = document.querySelector('body');
                 selectCountry.label,selectCountry.select,
                 zip.label,zip.input,zip.message,
                 password.label,password.input,password.message,
-                //confirmPassword,
+                confirmPassword.label,confirmPassword.input,confirmPassword.message,
                 submitButton,
                 );
     
