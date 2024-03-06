@@ -93,6 +93,10 @@ const validatePassword = () => {
     input.classList.add('validated');
 }
 
+const valdiateCPassword = () => {
+    
+}
+
 const validateForm = () => {
     validateEmail();
     validateZip();
