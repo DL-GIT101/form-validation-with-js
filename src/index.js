@@ -11,7 +11,7 @@ const body = document.querySelector('body');
 
         const selectCountry = createSelectCountry();
 
-        //const zip = createTextInput("Zip");
+        const zip = createTextInput("Zip");
 
         //const password = createPasswordInput();
 
@@ -20,8 +20,8 @@ const body = document.querySelector('body');
         const submitButton = createSubmitButton();
 
     form.append(email.label, email.input, email.message,
-                selectCountry.label,selectCountry.select,selectCountry.message,
-                //zip,
+                selectCountry.label,selectCountry.select,
+                zip.label,zip.input,zip.message,
                 //password,
                 //confirmPassword,
                 submitButton,
