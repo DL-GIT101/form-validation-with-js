@@ -56,7 +56,7 @@ const validateZip = () => {
     });
 
     if(!pattern.test(zip.value)){
-        zip.setCustomValidity("Follow the format");
+        zip.setCustomValidity("Please follow the format");
         message.textContent = format;
     }else {
         zip.setCustomValidity("");
@@ -64,6 +64,10 @@ const validateZip = () => {
     }
 
     zip.classList.add('validated');
+}
+
+const validatePassword = () => {
+    const regex = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/;
 }
 
 const validateForm = () => {
