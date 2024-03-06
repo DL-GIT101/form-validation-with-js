@@ -120,6 +120,8 @@ const createPasswordInput = () => {
     input.name = "password";
     input.id = "password";
     input.required = true;
+    const regex = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/;
+    input.pattern = regex.source;
     input.minLength = 8;
     input.maxLength = 16;
 
