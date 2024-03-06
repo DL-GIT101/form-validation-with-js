@@ -79,10 +79,7 @@ const createSelectCountry = () => {
         select.appendChild(option);
     });
 
-    const message = document.createElement('p');
-    message.className = "message";
-
-    return {label,select,message};
+    return {label,select};
 }
 
 const createTextInput = (title) => {
@@ -104,10 +101,7 @@ const createTextInput = (title) => {
     const message = document.createElement('p');
     message.className = "message";
 
-    const div = document.createElement('div');
-    div.className = "input-container";
-    div.append(label,input,message);
-    return div;
+    return {label,input,message};
 }
 
 const createPasswordInput = () => {
