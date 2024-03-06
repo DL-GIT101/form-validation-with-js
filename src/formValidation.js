@@ -1,17 +1,16 @@
 const validateEmail = () => {
     const input = document.querySelector('#email');
     const value = input.value;
-
-    const message = email.nextElementSibling;
+    const message = input.nextElementSibling;
     
     const regex = /[A-Za-z0-9._+\-']+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}/;
    
     if(value === ''){
         input.setCustomValidity("Please Fill out this field");
-        message.textContent = "Please Fill out this field";
+        message.textContent = "Please enter your email";
     }
     else if(!regex.test(value)){
-        message.textContent = "Ex. email@domain.com";
+        message.textContent = "ex: email@domain.com";
     }
     else {
         input.setCustomValidity("");
@@ -57,7 +56,7 @@ const validateZip = () => {
 
     if(!pattern.test(zip.value)){
         zip.setCustomValidity("Please follow the format");
-        message.textContent = format;
+        message.textContent = "ex: " + format;
     }else {
         zip.setCustomValidity("");
         message.textContent = '';
@@ -67,12 +66,37 @@ const validateZip = () => {
 }
 
 const validatePassword = () => {
+    
+    const input = document.querySelector('#password');
+    const value = input.value;
+    const message = input.nextElementSibling;
+
     const regex = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/;
+   
+    if(value === ''){
+        input.setCustomValidity("Please Fill out this field");
+        message.textContent = "Please enter your password";
+    }
+    else if(!regex.test(value)){
+        input.setCustomValidity("Password must contain 1 number (0-9) \n" +
+                                "Password must contain 1 uppercase letters \n" +
+                                "Password must contain 1 lowercase letters \n" +
+                                "Password must contain 1 non-alpha numeric number \n" +
+                                "Password is 8-16 characters with no space");
+        message.textContent = "Please follow the format";
+    }
+    else {
+        input.setCustomValidity("");
+        message.textContent = '';
+    }
+
+    input.classList.add('validated');
 }
 
 const validateForm = () => {
     validateEmail();
     validateZip();
+    validatePassword();
 }
 
 
