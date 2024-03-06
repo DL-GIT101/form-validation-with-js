@@ -21,6 +21,10 @@ const validateEmail = () => {
 
 }
 
+const validateZip = () => {
+    
+}
+
 const validateForm = () => {
     validateEmail();
 }
