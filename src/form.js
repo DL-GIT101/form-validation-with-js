@@ -123,11 +123,7 @@ const createPasswordInput = () => {
     const message = document.createElement('p');
     message.className = "message";
 
-    const div = document.createElement('div');
-    div.className = "input-container";
-    div.append(label,input,message);
-
-    return div;
+    return {label,input,message};
 }
 
 const createConfirmPasswordInput = () => {
@@ -147,7 +143,10 @@ const createConfirmPasswordInput = () => {
     input.id = "confirmPassword";
     input.required = true;
 
-    return confirmPasswordInput;
+    const message = document.createElement('p');
+    message.className = "message";
+
+    return {label,input,message};
 }
 
 const createSubmitButton = () => {
