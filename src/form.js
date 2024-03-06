@@ -39,26 +39,42 @@ const createEmailInput = () => {
     return {label,input,message};
 }
 
-const createSelect = (title, choices) => {
+const createSelectCountry = () => {
 
     const label = document.createElement('label');
-    label.textContent = title;
-    label.htmlFor = title.toLowerCase();
+    label.textContent = "Country";
 
     const span = document.createElement('span');
     span.textContent = "(required)";
     label.append(span);
 
     const select = document.createElement('select');
-    select.name = title.toLowerCase();
-    select.id = title.toLowerCase();
+    select.name = "country";
+    select.id = "country";
     select.autocomplete = "on";
 
-    choices.forEach(choice => {
+    const countries = [ { 
+        "Country": "Philippines",
+        "ISO": "PH",
+        "Format": "NNNN",
+        "Regex": "^\\d{4}$"
+    },{
+        "Country": "Japan",
+        "ISO": "JP",
+        "Format": "NNNNNNN (NNN-NNNN)",
+        "Regex": "^\\d{7}\\s\\(\\d{3}-\\d{4}\\)$"
+    },{
+        "Country": "South Korea",
+        "ISO": "KR",
+        "Format": "NNNNNN (NNN-NNN)(1988~2015)",
+        "Regex": "^\\d{6}\\s\\(\\d{3}-\\d{3}\\)$"
+    } ];
+
+    countries.forEach(country => {
         
         const option = document.createElement('option');
-        option.textContent = choice;
-        option.value = choice.toLowerCase();
+        option.textContent = country.Country;
+        option.value = country.ISO;
 
         select.appendChild(option);
     });
@@ -66,11 +82,7 @@ const createSelect = (title, choices) => {
     const message = document.createElement('p');
     message.className = "message";
 
-    const div = document.createElement('div');
-    div.className = "input-container";
-    div.append(label,select,message);
-
-    return div;
+    return {label,select,message};
 }
 
 const createTextInput = (title) => {
@@ -157,7 +169,7 @@ const createSubmitButton = () => {
 
 export {createForm,
         createEmailInput,
-        createSelect,createTextInput,
+        createSelectCountry,createTextInput,
         createPasswordInput,
         createConfirmPasswordInput,
         createSubmitButton,
