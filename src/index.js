@@ -1,4 +1,4 @@
-import { createConfirmPasswordInput, createEmailInput, createForm, createPasswordInput, createSelect, createSubmitButton, createTextInput } from './form';
+import { createConfirmPasswordInput, createEmailInput, createForm, createPasswordInput, createSelectCountry, createSubmitButton, createTextInput } from './form';
 import './style.css';
 
 const SampleForm = () => {
@@ -9,8 +9,7 @@ const body = document.querySelector('body');
     
         const email = createEmailInput();
 
-        //const countries = ["Philippines","Japan","South Korea"];
-        //const selectCountry = createSelect("Country",countries);
+        const selectCountry = createSelectCountry();
 
         //const zip = createTextInput("Zip");
 
@@ -21,7 +20,7 @@ const body = document.querySelector('body');
         const submitButton = createSubmitButton();
 
     form.append(email.label, email.input, email.message,
-                //selectCountry,
+                selectCountry.label,selectCountry.select,selectCountry.message,
                 //zip,
                 //password,
                 //confirmPassword,
