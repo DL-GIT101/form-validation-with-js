@@ -94,13 +94,34 @@ const validatePassword = () => {
 }
 
 const valdiateCPassword = () => {
-    
+
+    const confirmPassword = document.querySelector('#confirmPassword');
+    const password = document.querySelector('#password');
+    const message = confirmPassword.nextElementSibling;
+
+    console.log(confirmPassword);
+
+    if(confirmPassword.value === ''){
+        confirmPassword.setCustomValidity("Please Fill out this field");
+        message.textContent = "Please enter your password";
+    }
+    else if(confirmPassword.value !== password.value){
+        confirmPassword.setCustomValidity("Check your password");
+        message.textContent = "Password don't match";
+    }
+    else if(confirmPassword.value == password.value && password.checkValidity()){
+        confirmPassword.setCustomValidity("");
+        message.textContent = '';
+    }
+    console.log(confirmPassword.value);
+    confirmPassword.classList.add('validated');
 }
 
 const validateForm = () => {
     validateEmail();
     validateZip();
     validatePassword();
+    valdiateCPassword();
 }
 
 
