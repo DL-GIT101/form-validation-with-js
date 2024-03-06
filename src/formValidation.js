@@ -5,11 +5,11 @@ const validateEmail = () => {
     
     const regex = /[A-Za-z0-9._+\-']+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}/;
    
-    if(value === ''){
+    if(input.validity.valueMissing){
         input.setCustomValidity("Please Fill out this field");
         message.textContent = "Please enter your email";
     }
-    else if(!regex.test(value)){
+    else if(input.validity.patternMismatch){
         message.textContent = "ex: email@domain.com";
     }
     else {
@@ -45,16 +45,21 @@ const validateZip = () => {
     const zip = document.querySelector('#zip');
     const message = zip.nextElementSibling;
 
-    let pattern;
+    let regex;
     let format;
     countries.forEach(country => {
         if(country.ISO == countrySelected){
-            pattern = new RegExp(country.Regex);
+            regex = new RegExp(country.Regex);
             format = country.Format;
+            zip.pattern = regex.source;
         }
     });
 
-    if(!pattern.test(zip.value)){
+    if(zip.validity.valueMissing){
+        zip.setCustomValidity("Please Fill out this field");
+        message.textContent = "Please enter your zip";
+    }
+    else if(zip.validity.patternMismatch){
         zip.setCustomValidity("Please follow the format");
         message.textContent = "ex: " + format;
     }else {
@@ -68,16 +73,20 @@ const validateZip = () => {
 const validatePassword = () => {
     
     const input = document.querySelector('#password');
-    const value = input.value;
+
     const message = input.nextElementSibling;
 
     const regex = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/;
    
-    if(value === ''){
+    if(input.validity.valueMissing){
         input.setCustomValidity("Please Fill out this field");
         message.textContent = "Please enter your password";
     }
-    else if(!regex.test(value)){
+    else if(input.validity.tooLong || input.validity.tooShort){
+        input.setCustomValidity("Please follow the format");
+        message.textContent = "Password is 8-16 characters with no space";
+    }
+    else if(input.validity.patternMismatch){
         input.setCustomValidity("Password must contain 1 number (0-9) \n" +
                                 "Password must contain 1 uppercase letters \n" +
                                 "Password must contain 1 lowercase letters \n" +
@@ -101,7 +110,7 @@ const valdiateCPassword = () => {
 
     console.log(confirmPassword);
 
-    if(confirmPassword.value === ''){
+    if(confirmPassword.validity.valueMissing){
         confirmPassword.setCustomValidity("Please Fill out this field");
         message.textContent = "Please enter your password";
     }
