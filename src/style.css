@@ -59,7 +59,7 @@ form {
 }
 
 input.validated:valid, select:valid {
-    border: 2px solid green;
+    border: 2px solid rgb(64, 191, 64);
     background-color: whitesmoke;
 }
 
@@ -69,5 +69,8 @@ input.validated:invalid, select:invalid {
 
 .message{
     margin: 0;
-    color: red;
+    margin-left: 15px;
+    color: rgb(255, 50, 50);
+    font-style: italic;
+    font-size: smaller;
 }
