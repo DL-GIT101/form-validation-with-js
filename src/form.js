@@ -43,6 +43,7 @@ const createSelectCountry = () => {
 
     const label = document.createElement('label');
     label.textContent = "Country";
+    label.htmlFor = "country";
 
     const span = document.createElement('span');
     span.textContent = "(required)";
